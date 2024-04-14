@@ -5,6 +5,7 @@ import Match from "../../layout/sections/match/match";
 import Partners from "../../layout/sections/partners/partners";
 import Solutions from "../../layout/sections/solutions/solutions";
 import StatsBar from "../../layout/sections/stats-bar/statsBar";
+import "./home.css";
 
 const HomePagina = () => {
   return (
