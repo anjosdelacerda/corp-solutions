@@ -1,0 +1,17 @@
+.form-editar {
+  padding: 50px;
+}
+
+.limit-input {
+  width: 430px;
+}
+
+@media (max-width: 573px) {
+  .form-editar {
+    padding: 20px;
+  }
+
+  .limit-input {
+    width: 320px;
+  }
+}
