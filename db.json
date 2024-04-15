@@ -1,0 +1,26 @@
+{
+    "users": [
+
+    ],
+    "companys": [
+        {
+            "id": 1,
+            "name": "Space Y",
+            "points": 13666
+        },
+        {
+            "id": 2,
+            "name": "Mc Ronalds",
+            "points": 13886
+        },
+        {
+            "id": 3,
+            "name": "Headbook",
+            "points": 17164
+        }
+    ],
+    "jobs": [
+
+    ]
+
+}
