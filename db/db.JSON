@@ -1,0 +1,22 @@
+{
+    "usuarios": [
+      {
+        "id": "a196",
+        "nome": "rodrigo pereira",
+        "email": "rodrigo@gmail.com",
+        "senha": "admin"
+      },
+      {
+        "id": "9517",
+        "nome": "mateus",
+        "email": "mateus@gmail.com",
+        "senha": "q1w2e3"
+      },
+      {
+        "id": "9517",
+        "nome": "rita",
+        "email": "rita@corpsolution.com",
+        "senha": "q1w2e3"
+      }
+    ]
+  }

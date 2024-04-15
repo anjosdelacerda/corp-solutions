@@ -25,7 +25,7 @@ const rotas = createBrowserRouter([
         element: <TalentPool />
     },
     {
-        path: "profile",
+        path: "/profile",
         element: <Profile />
     },
     {
