@@ -8,33 +8,33 @@ import EditeProfile from "../pages/editProfile/EditeProfile";
 import Jobs from "../pages/jobs/Jobs";
 
 const rotas = createBrowserRouter([
-    {
-        path: "/",
-        element: <HomePagina />
-    },
-    {
-        path: "/login",
-        element: <Login />
-    },
-    {
-        path: "/Resgister",
-        element: <Register />
-    },
-    {
-        path: "/talentpool",
-        element: <TalentPool />
-    },
-    {
-        path: "/profile",
-        element: <Profile />
-    },
-    {
-        path: "/editeprofile",
-        element: <EditeProfile />
-    },
-    {
-        path: "/jobs",
-        element: <Jobs />
-    }
-])
-export default rotas
+  {
+    path: "/",
+    element: <HomePagina />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/talentpool",
+    element: <TalentPool />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+  {
+    path: "/editeprofile",
+    element: <EditeProfile />,
+  },
+  {
+    path: "/jobs",
+    element: <Jobs />,
+  },
+]);
+export default rotas;
