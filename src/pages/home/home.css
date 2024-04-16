@@ -1,3 +1,7 @@
+.stats-bar {
+  justify-content: space-between;
+}
+
 @media (max-width: 1600px) {
   .headerImage img {
     transition: all 0.5s ease;
@@ -34,7 +38,7 @@
   }
 }
 
-@media (max-width: 1054px) {
+@media (max-width: 1085px) {
   .stats-bar {
     flex-wrap: wrap;
     justify-content: center;
@@ -46,34 +50,18 @@
   }
 
   .section-image {
-    width: 300px;
-    height: fit-content;
-    margin: auto;
-  }
-}
-
-@media (max-width: 980px) {
-  .section-image {
     display: none;
   }
 
   .solutions,
   .match {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-  }
-
-  .stats-bar,
-  .footer {
-    justify-content: center;
   }
 }
 
-@media (max-width: 800px) {
-  .nav-bar {
-    flex-direction: column;
+@media (max-width: 980px) {
+  .footer {
     justify-content: center;
-    align-items: center;
-    gap: 10px;
   }
 }

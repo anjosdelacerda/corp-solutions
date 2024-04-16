@@ -18,13 +18,17 @@ const StatsBar = () => {
         display={"flex"}
         flexDirection={"row"}
         alignItems={"center"}
-        justifyContent={"space-between"}
         width={"1280px"}
         gap={"20px"}
         className="stats-bar"
       >
         <Typography variant="h5">Alguns dos nossos números</Typography>
-        <Box display={"flex"} flexWrap={"wrap"} gap={"20px"}>
+        <Box
+          display={"flex"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          gap={"20px"}
+        >
           <Stats image={users} numbers={"150"} resources="empresas parceiras" />
           <Stats
             image={arrowTopRight}
