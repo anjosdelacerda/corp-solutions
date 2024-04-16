@@ -9,10 +9,13 @@ const StatsBar = () => {
     <Box
       display={"flex"}
       justifyContent={"center"}
-      bgcolor={"#E0E1E6"}
-      marginTop={"159px"}
+      marginTop={"36px"}
       paddingTop={"45px"}
       paddingBottom={"45px"}
+      sx={{
+        background:
+          "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(224,225,230,1) 100%, rgba(224,225,230,1) 100%)",
+      }}
     >
       <Box
         display={"flex"}
@@ -27,7 +30,7 @@ const StatsBar = () => {
           display={"flex"}
           flexWrap={"wrap"}
           justifyContent={"center"}
-          gap={"20px"}
+          gap={"80px"}
         >
           <Stats image={users} numbers={"150"} resources="empresas parceiras" />
           <Stats
