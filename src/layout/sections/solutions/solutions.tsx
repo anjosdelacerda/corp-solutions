@@ -4,18 +4,15 @@ import candWeb from "../../../assets/cand-area.png";
 
 const Solutions = () => {
   return (
-    <Box
-      display={"flex"}
-      justifyContent={"center"}
-      paddingTop={"100px"}
-      id="solutions"
-    >
+    <Box display={"flex"} justifyContent={"center"} paddingTop={"100px"}>
       <Box
         display={"flex"}
         flexWrap={"wrap"}
         gap={"20px"}
         justifyContent={"space-between"}
+        alignItems={"center"}
         width={"1280px"}
+        id="solutions"
         className="solutions"
       >
         <Box
@@ -46,10 +43,14 @@ const Solutions = () => {
             suas vagas
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-            necessitatibus atque nihil nam ratione, pariatur amet dolorem ipsam
-            dolorum numquam labore enim facere molestias impedit incidunt cumque
-            quaerat earum. Tempora!
+            Com uma abordagem personalizada e focada em suas necessidades,
+            garantimos a seleção dos profissionais mais qualificados e alinhados
+            com sua cultura organizacional. Nossa experiência em recrutamento e
+            seleção permite identificar talentos que se destacarão em suas
+            vagas. Conte com nossa equipe dedicada para otimizar seu processo de
+            contratação e garantir o sucesso de sua equipe. Conheça como podemos
+            transformar a maneira como você recruta e encontre os talentos
+            certos para impulsionar o futuro da sua empresa.
           </Typography>
         </Box>
         <img

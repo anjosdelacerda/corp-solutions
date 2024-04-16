@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import headerImage from "../../../assets/cand-header.png";
 import arrowRight from "../../../assets/icons/arrow-right.png";
 
@@ -25,19 +25,21 @@ const Header = () => {
           marginTop={"100px"}
           zIndex={"1"}
         >
-          <Typography variant="h2" fontWeight={"bold"}>
-            Soluções com <span style={{ color: "#1976D2" }}>diversidade</span> e{" "}
-            <span style={{ color: "#1976D2" }}>inclusão</span> para o seu RH
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-            necessitatibus atque nihil nam ratione, pariatur amet dolorem ipsam
-            dolorum numquam labore enim facere molestias impedit incidunt cumque
-            quaerat earum. Tempora!
-          </Typography>
+          <h1 className="title">
+            Onde a <span style={{ color: "#1976D2" }}>diversidade</span> e a{" "}
+            <span style={{ color: "#1976D2" }}> oportunidade</span> se
+            encontram!
+          </h1>
+          <h3 className="subtitle">
+            Explore como conectamos talentos diversos com empresas inovadoras
+            que valorizam a inclusão. Junte-se a nós para criar um ambiente de
+            trabalho mais diversificado e acolhedor.
+          </h3>
           <Box>
-            <Button variant="contained">Conheça as empresas</Button>
-            <Button variant="text">
+            <Button variant="contained" href="#partners">
+              Conheça as empresas
+            </Button>
+            <Button variant="text" href="#solutions">
               <img src={arrowRight} alt="Seta para a direita" width={"20px"} />
               Entenda mais
             </Button>

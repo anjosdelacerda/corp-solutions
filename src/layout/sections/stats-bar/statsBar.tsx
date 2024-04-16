@@ -9,22 +9,29 @@ const StatsBar = () => {
     <Box
       display={"flex"}
       justifyContent={"center"}
-      bgcolor={"#E0E1E6"}
-      marginTop={"159px"}
+      marginTop={"36px"}
       paddingTop={"45px"}
       paddingBottom={"45px"}
+      sx={{
+        background:
+          "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(224,225,230,1) 100%, rgba(224,225,230,1) 100%)",
+      }}
     >
       <Box
         display={"flex"}
         flexDirection={"row"}
         alignItems={"center"}
-        justifyContent={"space-between"}
         width={"1280px"}
         gap={"20px"}
         className="stats-bar"
       >
         <Typography variant="h5">Alguns dos nossos números</Typography>
-        <Box display={"flex"} flexWrap={"wrap"} gap={"20px"}>
+        <Box
+          display={"flex"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          gap={"80px"}
+        >
           <Stats image={users} numbers={"150"} resources="empresas parceiras" />
           <Stats
             image={arrowTopRight}
