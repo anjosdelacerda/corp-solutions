@@ -30,14 +30,16 @@ const Header = () => {
             <span style={{ color: "#1976D2" }}>inclusão</span> para o seu RH
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-            necessitatibus atque nihil nam ratione, pariatur amet dolorem ipsam
-            dolorum numquam labore enim facere molestias impedit incidunt cumque
-            quaerat earum. Tempora!
+            Descubra soluções inovadoras e inclusivas para seu RH. Promovendo a
+            diversidade, impulsionamos a produtividade e o sucesso da sua
+            empresa. Junte-se a nós para criar um ambiente de trabalho mais
+            diversificado e acolhedor.
           </Typography>
           <Box>
-            <Button variant="contained">Conheça as empresas</Button>
-            <Button variant="text">
+            <Button variant="contained" href="#partners">
+              Conheça as empresas
+            </Button>
+            <Button variant="text" href="#solutions">
               <img src={arrowRight} alt="Seta para a direita" width={"20px"} />
               Entenda mais
             </Button>
