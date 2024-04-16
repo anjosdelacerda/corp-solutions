@@ -18,5 +18,65 @@
         "email": "rita@corpsolution.com",
         "senha": "q1w2e3"
       }
-    ]
-  }
+    ],
+
+    
+    
+      "dados": [
+        {
+          "id": "u001",
+          "nome": "Ana Souza",
+          "idade": 32,
+          "cidade": "Rio de Janeiro",
+          "deficiencia": null,
+          "genero": "feminino",
+          "orientacao": "bissexual",
+          "etnia": "parda",
+          "descricao": "Sou uma artista plástica apaixonada por cores e formas. Adoro viajar e conhecer novas culturas. Minha arte é uma expressão da minha alma, buscando sempre transmitir emoções e reflexões sobre o mundo que nos cerca. Além do meu trabalho como artista, sou voluntária em um projeto social que utiliza a arte como ferramenta de transformação e inclusão social."
+        },
+        {
+          "id": "u002",
+          "nome": "Rafael Oliveira",
+          "idade": 28,
+          "cidade": "São Paulo",
+          "deficiencia": "auditiva",
+          "genero": "masculino",
+          "orientacao": "homossexual",
+          "etnia": "negro",
+          "descricao": "Trabalho como professor de matemática em uma escola de ensino médio. Nas horas vagas, gosto de tocar violão e ler. Sou um defensor da inclusão e da diversidade, e busco sempre promover um ambiente acolhedor e educativo em sala de aula. Além disso, sou voluntário em uma ONG que oferece apoio e recursos para pessoas com deficiência auditiva, contribuindo para uma sociedade mais inclusiva e igualitária."
+        },
+        {
+          "id": "u003",
+          "nome": "Sophia Costa",
+          "idade": 40,
+          "cidade": "Brasília",
+          "deficiencia": "visual",
+          "genero": "feminino",
+          "orientacao": "heterossexual",
+          "etnia": "branca",
+          "descricao": "Sou advogada e defensora dos direitos das pessoas com deficiência. Adoro praticar esportes adaptados e estar em contato com a natureza. Minha jornada profissional é marcada pela luta pela inclusão e pela justiça social, dedicando-me a causas que promovam a igualdade de oportunidades para todos. Além do meu trabalho como advogada, sou voluntária em uma associação que oferece suporte jurídico gratuito para pessoas com deficiência, lutando diariamente por um mundo mais acessível e justo."
+        },
+        {
+          "id": "u004",
+          "nome": "Diego Santos",
+          "idade": 22,
+          "cidade": "Salvador",
+          "deficiencia": null,
+          "genero": "masculino",
+          "orientacao": "pansexual",
+          "etnia": "negro",
+          "descricao": "Estudante de engenharia elétrica apaixonado por tecnologia e inovação. Sempre em busca de novos desafios e aprendizados. Meu objetivo é contribuir para o avanço da ciência e da tecnologia, utilizando meus conhecimentos para criar soluções que melhorem a qualidade de vida das pessoas e promovam o desenvolvimento sustentável. Além dos estudos, sou membro ativo de um grupo de pesquisa que desenvolve projetos voltados para energias renováveis e eficiência energética, buscando alternativas mais sustentáveis para o futuro do planeta."
+        },
+        {
+          "id": "u005",
+          "nome": "Camila Ferreira",
+          "idade": 35,
+          "cidade": "Belo Horizonte",
+          "deficiencia": "física",
+          "genero": "feminino",
+          "orientacao": "heterossexual",
+          "etnia": "branca",
+          "descricao": "Trabalho como consultora de marketing em uma grande empresa. Adoro cinema, teatro e gastronomia. Minha deficiência física nunca me impediu de alcançar meus objetivos e perseguir meus sonhos. Sou uma pessoa determinada e criativa, sempre em busca de novas oportunidades e desafios. Além do trabalho, sou voluntária em uma organização que oferece suporte e assistência para pessoas com deficiência, ajudando a construir uma sociedade mais inclusiva e acessível para todos."
+        }
+      ]
+    }
