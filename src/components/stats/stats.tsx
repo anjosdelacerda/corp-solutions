@@ -13,13 +13,20 @@ const Stats = ({ image, numbers, resources }: IStats) => {
       display={"flex"}
       flexDirection={"column"}
       alignItems={"center"}
-      gap={"5px"}
+      // gap={"5px"}
     >
-      <img src={image} alt="" width={"60px"} />
-      <Typography variant="h2" fontWeight={"medium"} color={"#1976d2"}>
+      <img
+        src={image}
+        alt="Ícones"
+        width={"50px"}
+        style={{ marginBottom: "10px" }}
+      />
+      <Typography variant="h3" fontWeight={"medium"} color={"#1976d2"}>
         + {numbers}
       </Typography>
-      <Typography variant="h6">{resources}</Typography>
+      <Typography variant="subtitle1" style={{ lineHeight: 1 }}>
+        {resources}
+      </Typography>
     </Box>
   );
 };

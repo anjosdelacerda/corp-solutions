@@ -2,6 +2,18 @@
   justify-content: space-between;
 }
 
+.title {
+  font-size: 55px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #000000cc;
+  font-weight: normal;
+}
+
 @media (max-width: 1600px) {
   .headerImage img {
     transition: all 0.5s ease;
@@ -63,5 +75,15 @@
 @media (max-width: 980px) {
   .footer {
     justify-content: center;
+  }
+}
+
+@media (max-width: 757px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 20px;
   }
 }

@@ -14,9 +14,8 @@ const Footer = () => {
       alignItems={"center"}
       justifyContent={"center"}
       bgcolor={"#E0E1E6"}
-      marginTop={20}
-      paddingTop={"45px"}
-      paddingBottom={"45px"}
+      height={"125px"}
+      marginTop={"100px"}
     >
       <Box
         display={"flex"}

@@ -13,7 +13,7 @@ import logoCorpSolutions from "../../assets/logos/corp-solutions.png";
 
 const Nav = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -58,7 +58,7 @@ const Nav = () => {
       )}
 
       <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer}>
-        <Stack spacing={4} direction="column" padding={2}>
+        <Stack spacing={4} direction="column" padding={6}>
           <Button variant="text" href="/">
             Início
           </Button>
