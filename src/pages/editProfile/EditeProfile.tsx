@@ -6,6 +6,12 @@ import "./editeProfile.css";
 import { options } from "./optionsFromProfiles";
 import * as yup from "yup";
 import { useState } from "react";
+import {
+  formatCpf,
+  formatPhone,
+  isOver18YearsOld,
+  validationSchema,
+} from "./validators";
 
 interface IFormData {
   nomeCompleto: string;
@@ -40,35 +46,14 @@ const EditeProfile = () => {
 
   const [errors, setErrors] = useState<Partial<IFormData>>({});
 
-  const validationSchema = yup.object().shape({
-    nomeCompleto: yup.string().required("Digite seu nome completo"),
-    nomeSocial: yup.string(),
-    cpf: yup
-      .string()
-      .matches(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "O CPF precisa ter 11 dígitos")
-      .required("Digite os números do seu CPF")
-      .min(11, "O CPF deve ter 11 dígitos"),
-    escolaridade: yup.string(),
-    endereco: yup.string().required("Digite seu endereço"),
-    linkedin: yup.string(),
-    dataNascimento: yup.date().required("Digite sua data de nascimento"),
-    telefone: yup
-      .string()
-      .matches(
-        /^\(?\d{2}\)?\s*\d{4,5}-?\d{4}$/,
-        "O telefone precisa ter 10 dígitos"
-      )
-      .required("Digite seu telefone")
-      .min(11, "O telefone deve ter no máximo 11 dígitos"),
-    deficiencia: yup.string(),
-    etnia: yup.string(),
-    orientacaoSexual: yup.string(),
-    genero: yup.string(),
-  });
-
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
+      const isOver18 = isOver18YearsOld(formData.dataNascimento);
+      if (!isOver18) {
+        throw new Error("Você deve ter pelo menos 18 anos de idade.");
+      }
+
       await validationSchema.validate(formData, { abortEarly: false });
       console.log("Formulário validado", formData);
     } catch (error) {
@@ -78,6 +63,9 @@ const EditeProfile = () => {
           console.error(err.path, err.message);
           alert(err.message);
         });
+      } else {
+        console.error(error);
+        alert(error);
       }
       setErrors(newErrors);
     }
@@ -96,21 +84,6 @@ const EditeProfile = () => {
           ? formatPhone(value)
           : value,
     });
-  };
-
-  const formatCpf = (value: string) => {
-    return value
-      .replace(/\D/g, "")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-  };
-
-  const formatPhone = (value: string) => {
-    return value
-      .replace(/\D/g, "")
-      .replace(/(\d{2})(\d)/, "($1) $2")
-      .replace(/(\d{4,5})(\d)/, "$1-$2");
   };
 
   return (
@@ -309,5 +282,4 @@ const EditeProfile = () => {
     </form>
   );
 };
-
 export default EditeProfile;
