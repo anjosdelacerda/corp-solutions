@@ -78,5 +78,27 @@
           "etnia": "branca",
           "descricao": "Trabalho como consultora de marketing em uma grande empresa. Adoro cinema, teatro e gastronomia. Minha deficiência física nunca me impediu de alcançar meus objetivos e perseguir meus sonhos. Sou uma pessoa determinada e criativa, sempre em busca de novas oportunidades e desafios. Além do trabalho, sou voluntária em uma organização que oferece suporte e assistência para pessoas com deficiência, ajudando a construir uma sociedade mais inclusiva e acessível para todos."
         }
-      ]
+      ],
+      
+      "companys": [
+        {
+            "id": 1,
+            "name": "Space Y",
+            "points": 13666
+        },
+        {
+            "id": 2,
+            "name": "Mc Ronalds",
+            "points": 13886
+        },
+        {
+            "id": 3,
+            "name": "Headbook",
+            "points": 17164
+        }
+    ],
+    "jobs": [
+
+    ]
+
     }
