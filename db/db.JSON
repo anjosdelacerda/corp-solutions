@@ -18,5 +18,25 @@
         "email": "rita@corpsolution.com",
         "senha": "q1w2e3"
       }
-    ]
+    ],
+    "empresas": [
+      {
+          "id": 1,
+          "name": "Space Y",
+          "points": 13666
+      },
+      {
+          "id": 2,
+          "name": "Mc Ronalds",
+          "points": 13886
+      },
+      {
+          "id": 3,
+          "name": "Headbook",
+          "points": 17164
+      }
+  ],
+  "vagas": [
+
+  ]
   }
