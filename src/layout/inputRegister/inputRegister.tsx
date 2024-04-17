@@ -4,16 +4,12 @@ import TextField from '@mui/material/TextField';
 type LabelInput = {
     label: string
     type: string
-    value: string
-    onChange: (value: string) => void
+    name?: string
+    register?: any
 }
 
-export default function InputLogin(props: LabelInput) {
-    const { label, type, value, onChange } = props;
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange(e.target.value);
-    };
+export default function InputRegister(props: LabelInput) {
+    const { label, type, name, register } = props;
 
     return (
         <Box
@@ -30,10 +26,10 @@ export default function InputLogin(props: LabelInput) {
                     id="outlined-required"
                     label={label}
                     type={type}
-                    value={value}
-                    onChange={handleChange}
-                    style={{paddingBottom: "15px"}}
-                />
+                    name={name}
+                    {...register(name)}
+                    />
+                
             </div>
         </Box>
     );

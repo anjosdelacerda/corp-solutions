@@ -1,0 +1,26 @@
+.ContainerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    padding: 0.1rem 3rem;
+}
+
+.FormRegister {
+    height: 600px;
+    background-color: #c7c4c457;
+    text-align: center;
+    padding: 20px;
+}
+.RegisterImg{
+    margin: 30px;
+}
+.RegisterLink{
+    text-decoration: none;
+    color: rgb(35, 35, 238);
+}
+.ConatinerLinkBtn{
+    margin-top: 30px;
+}
+

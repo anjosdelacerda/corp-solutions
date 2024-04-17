@@ -21,7 +21,6 @@ const Footer = () => {
         display={"flex"}
         flexWrap={"wrap"}
         alignItems={"center"}
-        justifyContent={"space-between"}
         gap={"20px"}
         width={"1280px"}
         className="footer"

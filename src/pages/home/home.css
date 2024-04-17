@@ -1,4 +1,5 @@
-.stats-bar {
+.stats-bar,
+.footer {
   justify-content: space-between;
 }
 

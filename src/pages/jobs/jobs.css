@@ -1,0 +1,14 @@
+.container-jobs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+@media (max-width: 1238px) {
+  .container-jobs {
+    justify-content: center;
+    align-items: center;
+  }
+}

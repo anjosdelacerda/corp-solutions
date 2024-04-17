@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+<h1 align="center"> 👩🏻‍💻 Corp Solutions 👨🏾‍💻 </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-equipe">Equipe</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-rodar-o-projeto">Rodar o projeto</a>
+</p>
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img alt="Preview do projeto" src="./src/assets/preview.png">
+</p>
 
-## Expanding the ESLint configuration
+<br>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 💻 Projeto
 
-- Configure the top-level `parserOptions` property like this:
+O projeto foi desenvolvido durante o Hackathon da **Ada Tech** e tem como objetivo criar estratégias e desenvolver soluções inovadoras que ajudem a Corp Solutions a aumentar a diversidade e a inclusão em sua equipe. Cada equipe deveria criar soluções que promovam uma cultura organizacional mais diversificada e inclusiva, utilizando tecnologia e criatividade para enfrentar esse desafio. O Hackathon visa encontrar ideias e projetos que possam ser implementados dentro de ambientes corporativos para impulsionar a diversidade e a inclusão no ambiente de trabalho, contribuindo para o crescimento dessa causa dentro do mercado de trabalho.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+<br>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🤝🏼 Equipe
+
+Somos a Equipe Front-end 2, que é composta por:
+
+- [Alex Aparecido](https://www.linkedin.com/in/alexaparecido/)
+- [Eric Gakvão](https://www.linkedin.com/in/eric-galvao/)
+- [Fernando Lacerda](https://www.linkedin.com/in/lacerda-fernando/)
+- [Karina Nunes](https://www.linkedin.com/in/karinanuunes/)
+- [Layna Moraes](https://www.linkedin.com/in/layna-moraes/)
+- [Rodrigo Pereira](https://www.linkedin.com/in/rodrigo-pereira-br/)
+
+<br>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias e bibliotecas:
+
+- ReactJS
+- react-router-dom
+- MaterialUI
+- json-server
+- Node
+- Git
+- Yup
+  <br><br>
+
+## ▶ Rodar o projeto
+
+- Primeiro passo, clone o projeto em sua máquina (ou se desejar, crie um fork e após isso clone o projeto)
+- Abra a pasta do projeto no terminal
+- Instale as dependências com o comando `npm install`
+- Inicie o servidor com o comando `npm run dev`, que iniciará o front e `npm run server` para rodar o json-server.
