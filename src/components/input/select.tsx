@@ -12,13 +12,18 @@ interface ISelect {
   options: string[];
   value: string;
   name?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void | undefined;
+  onChange?: (value: string) => void | undefined;
 }
 
-const SelectInput = ({ label, options }: ISelect) => {
-  const [selectedValue, setSelectedValue] = useState("");
+const SelectInput = ({ label, options, value, onChange }: ISelect) => {
+  const [selectedValue, setSelectedValue] = useState(value);
+
   const handleSelectChange = (event: SelectChangeEvent<string>) => {
-    setSelectedValue(event.target.value);
+    const newValue = event.target.value;
+    setSelectedValue(newValue);
+    if (onChange) {
+      onChange(newValue);
+    }
   };
 
   return (
@@ -26,7 +31,7 @@ const SelectInput = ({ label, options }: ISelect) => {
       <InputLabel>{label}</InputLabel>
       <Select
         label={label}
-        size={"small"}
+        size="small"
         sx={{
           width: "320px",
         }}

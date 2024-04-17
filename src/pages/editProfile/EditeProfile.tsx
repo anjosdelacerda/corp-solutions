@@ -46,7 +46,8 @@ const EditeProfile = () => {
     cpf: yup
       .string()
       .matches(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "O CPF precisa ter 11 dígitos")
-      .required("Digite os números do seu CPF"),
+      .required("Digite os números do seu CPF")
+      .min(11, "O CPF deve ter 11 dígitos"),
     escolaridade: yup.string(),
     endereco: yup.string().required("Digite seu endereço"),
     linkedin: yup.string(),
@@ -57,7 +58,8 @@ const EditeProfile = () => {
         /^\(?\d{2}\)?\s*\d{4,5}-?\d{4}$/,
         "O telefone precisa ter 10 dígitos"
       )
-      .required("Digite seu telefone"),
+      .required("Digite seu telefone")
+      .min(11, "O telefone deve ter no máximo 11 dígitos"),
     deficiencia: yup.string(),
     etnia: yup.string(),
     orientacaoSexual: yup.string(),
@@ -87,8 +89,28 @@ const EditeProfile = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]:
+        name === "cpf"
+          ? formatCpf(value)
+          : name === "telefone"
+          ? formatPhone(value)
+          : value,
     });
+  };
+
+  const formatCpf = (value: string) => {
+    return value
+      .replace(/\D/g, "")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+  };
+
+  const formatPhone = (value: string) => {
+    return value
+      .replace(/\D/g, "")
+      .replace(/(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{4,5})(\d)/, "$1-$2");
   };
 
   return (
@@ -139,6 +161,7 @@ const EditeProfile = () => {
                   type="text"
                   style={{ width: "320px" }}
                   onChange={handleChange}
+                  maxLength={14}
                   required
                 />
                 {errors.cpf && <small className="error">{errors.cpf}</small>}
@@ -147,7 +170,11 @@ const EditeProfile = () => {
                   name="escolaridade"
                   value={formData.escolaridade}
                   options={options.escolaridade}
-                  onChange={handleChange}
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "escolaridade", value: value },
+                    } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+                  }
                 />
               </InputBox>
               <InputBox>
@@ -198,6 +225,7 @@ const EditeProfile = () => {
                   style={{ width: "320px" }}
                   type="text"
                   onChange={handleChange}
+                  maxLength={15}
                   required
                 />
                 {errors.telefone && (
@@ -217,14 +245,22 @@ const EditeProfile = () => {
                   name="deficiencia"
                   value={formData.deficiencia}
                   options={options.deficiencia}
-                  onChange={handleChange}
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "deficiencia", value: value },
+                    } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+                  }
                 />
                 <SelectInput
                   label="Etnia"
                   name="etnia"
                   value={formData.etnia}
                   options={options.etnia}
-                  onChange={handleChange}
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "etnia", value: value },
+                    } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+                  }
                 />
               </InputBox>
               <InputBox>
@@ -233,14 +269,22 @@ const EditeProfile = () => {
                   name="orientacaoSexual"
                   value={formData.orientacaoSexual}
                   options={options.orientacaoSexual}
-                  onChange={handleChange}
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "orientacaoSexual", value: value },
+                    } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+                  }
                 />
                 <SelectInput
                   label="Gênero"
                   name="genero"
                   value={formData.genero}
                   options={options.genero}
-                  onChange={handleChange}
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "genero", value: value },
+                    } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+                  }
                 />
               </InputBox>
             </Box>
