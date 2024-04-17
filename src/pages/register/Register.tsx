@@ -9,6 +9,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 const Register = () => {
 
+    const navigate = useNavigate()
+
   const formSchema = yup.object().shape({
     name: yup.string().required("nome é obrigatório"),
     email: yup.string().email("e-mail inválido").required("e-mail obrigatório"),
@@ -27,10 +29,35 @@ const Register = () => {
     resolver: yupResolver(formSchema)
   })
 
-  const onSubmitFunction = (data: any) =>{
-      console.log(data)
+  const onSubmitFunction = (data: any) => {
+    data.isAdm = false;
+  
+   
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data), 
+    };
+  
+    
+    fetch('http://localhost:3000/usuarios', options)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao enviar os dados do usuário.');
+        }
+        return response.json(); 
+      })
+      .then(data => {
+        console.log('Usuário enviado com sucesso:', data);
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
 
-  }
+      navigate("/")
+  };
 
     return (
         <div className='ContainerForm'>
