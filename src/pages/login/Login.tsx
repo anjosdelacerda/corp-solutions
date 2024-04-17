@@ -35,7 +35,7 @@ const Login = () => {
             navigate("/talentpool")
             return
         }
-        navigate("/")
+        navigate("/jobs")
     };
     return (
       <div className="ContainerForm">
