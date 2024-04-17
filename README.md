@@ -44,6 +44,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias e bibliotecas:
 - json-server
 - Node
 - Git
+- Yup
   <br><br>
 
 ## ▶ Rodar o projeto
