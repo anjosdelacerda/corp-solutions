@@ -32,6 +32,7 @@ export default function InputLogin(props: LabelInput) {
                     type={type}
                     value={value}
                     onChange={handleChange}
+                    style={{paddingBottom: "15px"}}
                 />
             </div>
         </Box>
