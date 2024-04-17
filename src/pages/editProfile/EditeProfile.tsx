@@ -2,7 +2,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import Input from "../../components/input/input";
 import InputBox from "../../components/input/inputBox";
 import SelectInput from "../../components/input/select";
-import "./editar.css";
+import "./editeProfile.css";
 import { options } from "./optionsFromProfiles";
 import * as yup from "yup";
 import { useState } from "react";

@@ -59,7 +59,7 @@ const Jobs = () => {
                 Buscar
               </Button>
             </Box>
-            <Link to="/login">
+            <Link to="/editeprofile">
               <AccountCircleIcon
                 sx={{ mr: 1, fontSize: "40px", color: "#00000040" }}
               />
