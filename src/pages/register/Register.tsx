@@ -16,13 +16,13 @@ const Register = () => {
     name: yup.string().required("nome é obrigatório"),
     email: yup.string().email("e-mail inválido").required("e-mail obrigatório"),
     birthday: yup.date().required("data de nascimento é obrigatória"),
-    password: yup
+    senha: yup
     .string()
     .required("Senha é obrigatória")
     .min(6, "A senha deve ter pelo menos 8 caracteres"),
     checkedPassword: yup
     .string()
-    .oneOf([yup.ref('password')], 'As senhas precisam ser iguais')
+    .oneOf([yup.ref('senha')], 'As senhas precisam ser iguais')
     .required('Confirmação de senha é obrigatória')
   })
 
@@ -92,7 +92,7 @@ const Register = () => {
                     label={'Senha'}
                     type={'password'}
                     register={register}
-                    name={'password'}
+                    name={'senha'}
                 />
                 {errors.password && errors.password.message}
                 
