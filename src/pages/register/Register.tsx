@@ -6,6 +6,7 @@ import "./register.css";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { v4 as uuid } from "uuid";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -17,13 +18,13 @@ const Register = () => {
       .date()
       .required("Digite sua data de nascimento")
       .typeError("Digite sua data de nascimento"),
-    password: yup
+    senha: yup
       .string()
       .required("Digite a senha com no mínimo 8 caracteres")
       .min(6, "A senha deve ter pelo menos 8 caracteres"),
     checkedPassword: yup
       .string()
-      .oneOf([yup.ref("password")], "As senhas precisam ser iguais")
+      .oneOf([yup.ref("senha")], "As senhas precisam ser iguais")
       .required("Digite a mesma senha com no mínimo 8 caracteres"),
   });
 
@@ -37,6 +38,7 @@ const Register = () => {
 
   const onSubmitFunction = (data: any) => {
     data.isAdm = false;
+    data.id = uuid()
 
     const options = {
       method: "POST",
@@ -60,7 +62,7 @@ const Register = () => {
         console.error("Erro:", error);
       });
 
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -123,9 +125,9 @@ const Register = () => {
                 label={"Senha"}
                 type={"password"}
                 register={register}
-                name={"password"}
+                name={"senha"}
               />
-              {errors.password && <small>{errors.password.message}</small>}
+              {errors.senha && <small>{errors.senha.message}</small>}
 
               <InputRegister
                 label={"Confirme sua senha"}
