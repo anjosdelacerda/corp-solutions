@@ -1,48 +1,5 @@
-.ContainerForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #ffffff;
-}
-
-.FormLogin {
-  height: 400px;
-  background-color: #ffffff;
-  text-align: center;
-  padding: 60px;
-  border-radius: 4px;
-
-  box-shadow: 0px 4px 8.9px 0px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 4px 8.9px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 4px 8.9px 0px rgba(0, 0, 0, 0.25);
-}
-.FormLogin h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  padding-bottom: 50px;
-}
-.FormImg {
-  margin: 30px;
-}
 .FormLink {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 700;
-}
-.ConatinerLinkBtn {
-  margin-top: 8px;
-}
-.ConatinerLinkBtn p {
-  margin: 40px 0 10px 0;
-}
-.RegisterText {
-  font-size: 0.875rem;
-  color: rgba(0, 0, 0, 0.5);
-}
-.ErrorText {
-  font-size: 0.875rem;
-  color: red;
-  font-weight: 500;
-  margin-bottom: 10px;
 }
