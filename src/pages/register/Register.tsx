@@ -6,6 +6,7 @@ import "./register.css"
 import {useForm} from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup';
+import { v4 as uuid } from 'uuid';
 
 const Register = () => {
 
@@ -31,6 +32,7 @@ const Register = () => {
 
   const onSubmitFunction = (data: any) => {
     data.isAdm = false;
+    data.id = uuid()
   
    
     const options = {
@@ -56,7 +58,7 @@ const Register = () => {
         console.error('Erro:', error);
       });
 
-      navigate("/")
+      navigate("/login")
   };
 
     return (
