@@ -15,19 +15,17 @@ export default function InputLogin(props: LabelInput) {
   };
 
   return (
-    <Box component="form" width={"428px"} noValidate autoComplete="off">
-      <div>
-        <TextField
-          required
-          id="outlined-required"
-          label={label}
-          type={type}
-          value={value}
-          onChange={handleChange}
-          size="small"
-          fullWidth
-        />
-      </div>
+    <Box component="form" noValidate autoComplete="off">
+      <TextField
+        required
+        id="outlined-required"
+        label={label}
+        type={type}
+        value={value}
+        onChange={handleChange}
+        size="small"
+        sx={{ width: "428px" }}
+      />
     </Box>
   );
 }
