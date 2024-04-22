@@ -26,7 +26,7 @@ O projeto foi desenvolvido durante o Hackathon da **Ada Tech** e tem como objeti
 Somos a Equipe Front-end 2, que é composta por:
 
 - [Alex Aparecido](https://www.linkedin.com/in/alexaparecido/)
-- [Eric Gakvão](https://www.linkedin.com/in/eric-galvao/)
+- [Eric Galvão](https://www.linkedin.com/in/eric-galvao/)
 - [Fernando Lacerda](https://www.linkedin.com/in/lacerda-fernando/)
 - [Karina Nunes](https://www.linkedin.com/in/karinanuunes/)
 - [Layna Moraes](https://www.linkedin.com/in/layna-moraes/)

@@ -26,6 +26,15 @@
       "email": "anjosdelacerda@gmail.com",
       "name": "fernando lacerda",
       "isAdm": false
+    },
+    {
+      "id": "3c425ce6-0552-4826-aff0-41c1ae8ce3ff",
+      "checkedPassword": "123456",
+      "senha": "123456",
+      "birthday": "2000-02-22T02:00:00.000Z",
+      "email": "damen.tufao@gmail.com",
+      "name": "carmen lucia",
+      "isAdm": false
     }
   ],
   "dados": [
