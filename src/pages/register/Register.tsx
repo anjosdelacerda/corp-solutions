@@ -1,113 +1,158 @@
-import InputRegister from '../../layout/inputRegister/inputRegister';
-import { Button } from "@mui/material";
-import logoCorpSolutions from "../../assets/logos/corp-solutions.png";
-import { Link, useNavigate } from 'react-router-dom';
-import "./register.css"
-import {useForm} from "react-hook-form"
-import * as yup from "yup"
-import { yupResolver } from '@hookform/resolvers/yup';
+import InputRegister from "../../layout/inputRegister/inputRegister";
+import { Box, Button, Typography } from "@mui/material";
+// import logoCorpSolutions from "../../assets/logos/corp-solutions.png";
+import { Link, useNavigate } from "react-router-dom";
+import "./register.css";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { v4 as uuid } from "uuid";
 
 const Register = () => {
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const formSchema = yup.object().shape({
-    name: yup.string().required("nome é obrigatório"),
-    email: yup.string().email("e-mail inválido").required("e-mail obrigatório"),
-    birthday: yup.date().required("data de nascimento é obrigatória"),
-    password: yup
-    .string()
-    .required("Senha é obrigatória")
-    .min(6, "A senha deve ter pelo menos 8 caracteres"),
+    name: yup.string().required("Digite seu nome"),
+    email: yup.string().email("e-mail inválido").required("Digite seu e-mail"),
+    birthday: yup
+      .date()
+      .required("Digite sua data de nascimento")
+      .typeError("Digite sua data de nascimento"),
+    senha: yup
+      .string()
+      .required("Digite a senha com no mínimo 8 caracteres")
+      .min(6, "A senha deve ter pelo menos 8 caracteres"),
     checkedPassword: yup
-    .string()
-    .oneOf([yup.ref('password')], 'As senhas precisam ser iguais')
-    .required('Confirmação de senha é obrigatória')
-  })
+      .string()
+      .oneOf([yup.ref("senha")], "As senhas precisam ser iguais")
+      .required("Digite a mesma senha com no mínimo 8 caracteres"),
+  });
 
-  const {handleSubmit, register, formState: {errors} } = useForm({
-    resolver: yupResolver(formSchema)
-  })
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
 
   const onSubmitFunction = (data: any) => {
     data.isAdm = false;
-  
-   
+    data.id = uuid()
+
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data), 
+      body: JSON.stringify(data),
     };
-  
-    
-    fetch('http://localhost:3000/usuarios', options)
-      .then(response => {
+
+    fetch("http://localhost:3000/usuarios", options)
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Erro ao enviar os dados do usuário.');
+          throw new Error("Erro ao enviar os dados do usuário.");
         }
-        return response.json(); 
+        return response.json();
       })
-      .then(data => {
-        console.log('Usuário enviado com sucesso:', data);
+      .then((data) => {
+        console.log("Usuário enviado com sucesso:", data);
       })
-      .catch(error => {
-        console.error('Erro:', error);
+      .catch((error) => {
+        console.error("Erro:", error);
       });
 
-      navigate("/")
+    navigate("/login");
   };
 
-    return (
+  return (
+    <Box
+      width={"100vw"}
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      marginY={"20px"}
+    >
+      <form onSubmit={handleSubmit(onSubmitFunction)}>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          padding={"60px"}
+          gap={"80px"}
+          sx={{
+            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <Typography
+            variant="h3"
+            fontSize={"46px"}
+            fontWeight={"bold"}
+            gutterBottom
+          >
+            Cadastre-se
+          </Typography>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            gap={"45px"}
+          >
+            <Box display={"flex"} flexDirection={"column"} gap={"30px"}>
+              <InputRegister
+                label={"Nome completo"}
+                type={"text"}
+                register={register}
+                name={"name"}
+              />
+              {errors.name && <small>{errors.name.message}</small>}
+              <InputRegister
+                label={"E-mail"}
+                type={"email"}
+                register={register}
+                name={"email"}
+              />
+              {errors.email && <small>{errors.email.message}</small>}
 
-        <div className='ContainerForm'>
-            <form onSubmit={handleSubmit(onSubmitFunction)} className='FormRegister'>
-                <img src={logoCorpSolutions} alt="Logo da Corp Solutions" height={70} className='RegisterImg' />
-                <InputRegister
-                    label={'Nome completo'}
-                    type={'text'}
-                    register={register}
-                    name={'name'}
-                />
-                {errors.name && errors.name.message}
-                <InputRegister
-                    label={'E-mail'}
-                    type={'email'}
-                    register={register}
-                    name={'email'}
-                />
-                {errors.email && errors.email.message}
+              <InputRegister
+                label={""}
+                type={"date"}
+                register={register}
+                name={"birthday"}
+              />
+              {errors.birthday && <small>{errors.birthday.message}</small>}
+              <InputRegister
+                label={"Senha"}
+                type={"password"}
+                register={register}
+                name={"senha"}
+              />
+              {errors.senha && <small>{errors.senha.message}</small>}
 
-                <InputRegister
-                    label={''}
-                    type={'date'}
-                    register={register}
-                    name={'birthday'}
-                />
-                {errors.birthday && errors.birthday.message}
-                <InputRegister
-                    label={'Senha'}
-                    type={'password'}
-                    register={register}
-                    name={'password'}
-                />
-                {errors.password && errors.password.message}
-                
-                <InputRegister
-                    label={'Confirme sua senha'}
-                    type={'password'}
-                    register={register}
-                    name={'checkedPassword'}
-                />
-                {errors.checkedPassword && errors.checkedPassword.message}
-                <div className='ConatinerLinkBtn'>
-                    <Button variant="contained" className="limit-input" type="submit">Cadastrar</Button>
-                    <p>Voltar pra <Link className='RegisterLink' to={"/"}><span>Home</span></Link></p>
-                </div>
-            </form>
-        </div>
-    );
+              <InputRegister
+                label={"Confirme sua senha"}
+                type={"password"}
+                register={register}
+                name={"checkedPassword"}
+              />
+              {errors.checkedPassword && (
+                <small>{errors.checkedPassword.message}</small>
+              )}
+            </Box>
+            <Button variant="contained" className="limit-input" type="submit">
+              Cadastrar
+            </Button>
+            <Typography variant={"body2"} color={"#808080"}>
+              Já possui uma conta?{" "}
+              <Link className="FormLink" to={"/login"}>
+                Entrar
+              </Link>
+            </Typography>
+          </Box>
+        </Box>
+      </form>
+    </Box>
+  );
 };
 
 export default Register;
